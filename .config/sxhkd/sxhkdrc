@@ -1,0 +1,46 @@
+# Basic binds
+super + Return
+    $TERMINAL
+
+super + d
+    dmenu_run -fn "hack:size=10" -nb "#3c302e" -nf "#bbbbbb" -sb  "#a86438" -sf "#000000"
+
+super + shift + f
+    $TERMINAL -e $FILE
+
+super + shift + i
+    $TERMINAL -e htop
+
+super + shift + m
+    $TERMINAL -e ncmpcpp
+
+super + shift + n
+    $TERMINAL -e newsboat
+
+super + shift + w
+    $BROWSER
+
+super + shift + Escape
+    prompt "Shutdown computer?" "sudo -A shutdown -h now"
+
+super + shift + b
+    read_books
+
+super + shift + e
+    $TERMINAL -e neomutt; pkill -RTMIN+12 $STATUSBAR
+
+super + shift + c
+    $TERMINAL -e calcurse -D ~/.config/calcurse
+
+XF86Audio{Raise,Lower}Volume
+    amixer sset Master 5%{+,-}; pkill -RTMIN+10 blocks
+
+XF86AudioMute
+    amixer sset Master toggle; pkill -RTMIN+10 blocks
+
+XF86PowerOff
+    dmenu_shutdown
+
+# Want to look more into this kind of model of opening programs.
+# super + o ; {e,w,f,n}
+# 	{$TERMINAL -e neomutt,$BROWSER,$TERMINAL -e $FILE, newsboat};
