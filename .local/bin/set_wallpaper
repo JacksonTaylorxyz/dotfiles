@@ -1,0 +1,10 @@
+#!/bin/sh
+pape=$1
+
+if [ -z "$pape" ]
+then
+    pape=$WALLPAPER
+fi
+
+xwallpaper --zoom $pape
+wal -i $pape

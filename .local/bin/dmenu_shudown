@@ -1,0 +1,12 @@
+#!/bin/sh
+
+choice=$(printf "no\\nYES" | dmenu -p "Shutdown?")
+
+if [ "$choice" = "YES" ]; then
+
+    choice=$(printf "no\\nYES" | dmenu -p "Are you sure?")
+    if [ "$choice" = "YES" ]; then
+        echo "Shutting down"
+        # shutdown -h now
+    fi
+fi

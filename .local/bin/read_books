@@ -1,0 +1,8 @@
+#!/bin/sh
+
+#DMENU_OPTION="dmenu -fn \"hack:size=10\" -nb \"#3c302e\" -nf \"#bbbbbb\" -sb  \"#a86438\" -sf \"#000000\" -l 20"
+
+#du -a ~/Documents/books/* | awk '/\.pdf/{print $2}' | dmenu -fn "hack:size=10" -nb "#3c302e" -nf "#bbbbbb" -sb "#a86438" -sf "#000000" -l 20 | xargs -r $READER ;
+book=$(du -a ~/Documents/books/* | awk '/\.pdf/{print $2}' | dmenu -fn "hack:size=10" -nb "#3c302e" -nf "#bbbbbb" -sb "#a86438" -sf "#000000" -l 20);
+if [ -n $book ]; then $READER $book; fi
+
